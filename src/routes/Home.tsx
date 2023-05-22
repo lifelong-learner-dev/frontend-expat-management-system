@@ -1,129 +1,176 @@
 import { Box, Button, Flex, Grid, IconButton, Image, Text } from "@chakra-ui/react";
-import { FaIdCard } from "react-icons/fa";
-import Navigation from "../components/Navigation";
+import { FaIdCard, FaUser } from "react-icons/fa";
 export default function Home(){
     return (
-        <Flex>
-            <Navigation/>
-            <Grid w="70%" mt={10} ml={7} px={30} columnGap={10} rowGap={20} templateColumns={"repeat(3, 1fr)"}>
-                <Box w="100%" aria-rowspan={2}>
+            <Grid
+                mt={2}
+                mb={10}
+                px={{
+                base: 10,
+                lg: 40,
+                }}
+                columnGap={4}
+                rowGap={8}
+                templateColumns={{
+                sm: "repeat(3, 1fr)",
+                md: "repeat(3, 1fr)",
+                lg: "repeat(3, 1fr)",
+                xl: "repeat(3, 1fr)",
+                "2xl": "repeat(5, 1fr)",
+                }}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.200"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">User</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.200"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Work permit</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.200"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.00"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md'  }} textAlign="center">Company car</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.300"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Driving license</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.300"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.300"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.300"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                        </Box>
                     </Flex>
                 </Box>
-                <Box w="100%" aria-rowspan={2}>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
-                        <IconButton
-                            bg="grey.100"
-                            w="100%"
-                            h="100%"
-                            color="green.300"
-                            icon={<FaIdCard size='50%'/>}
-                            aria-label="Work permit"
-                        />
-                        <Text fontSize="md" as='b'>Work permit</Text>
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="green.200"
+                                icon={<FaUser size='50%'/>}
+                                aria-label="User"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                        </Box>
                     </Flex>
                 </Box>
-            </Grid>
-        </Flex>    
+            </Grid>   
     );
 }
