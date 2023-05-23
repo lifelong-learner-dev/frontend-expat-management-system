@@ -1,9 +1,9 @@
 import { Box, Button, Flex, Grid, IconButton, Image, Text } from "@chakra-ui/react";
-import { FaIdCard, FaUser } from "react-icons/fa";
+import { FaCar, FaClipboardList, FaHouseUser, FaIdCard, FaLuggageCart, FaRoad, FaRoute, FaTruckMoving, FaUser, FaUserFriends, FaUsers } from "react-icons/fa";
 export default function Home(){
     return (
             <Grid
-                mt={2}
+                mt={1}
                 mb={10}
                 px={{
                 base: 10,
@@ -28,7 +28,7 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
+                                color="yellow.600"
                                 icon={<FaUser size='50%'/>}
                                 aria-label="User"/>
                             <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">User</Text>
@@ -45,9 +45,9 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
+                                color="yellow.600"
+                                icon={<FaIdCard size='50%'/>}
+                                aria-label="Work permit"/>
                             <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Work permit</Text>
                         </Box>
                     </Flex>
@@ -62,9 +62,9 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
+                                color="yellow.600"
+                                icon={<FaUsers size='50%'/>}
+                                aria-label="Family residence permit"/>
                             <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
                         </Box>
                     </Flex>
@@ -79,9 +79,9 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
+                                color="yellow.600"
+                                icon={<FaCar size='50%'/>}
+                                aria-label="Company car"/>
                             <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md'  }} textAlign="center">Company car</Text>
                         </Box>
                     </Flex>
@@ -96,8 +96,8 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
+                                color="yellow.600"
+                                icon={<FaRoad size='50%'/>}
                                 aria-label="User"/>
                             <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Driving license</Text>
                         </Box>
@@ -113,10 +113,10 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                                color="yellow.600"
+                                icon={<FaHouseUser size='50%'/>}
+                                aria-label="House"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">House</Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -130,10 +130,10 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                                color="yellow.600"
+                                icon={<FaTruckMoving size='50%'/>}
+                                aria-label="Moving"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Moving</Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -147,10 +147,10 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                                color="yellow.600"
+                                icon={<FaRoute size='50%'/>}
+                                aria-label="Green card"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Green card</Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -164,10 +164,27 @@ export default function Home(){
                                 bg="grey.100"
                                 w="100%"
                                 h="100%"
-                                color="green.200"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Family residence permit</Text>
+                                color="yellow.600"
+                                icon={<FaLuggageCart size='50%'/>}
+                                aria-label="Pick up"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Pick up</Text>
+                        </Box>
+                    </Flex>
+                </Box>
+                <Box display="grid"
+                    gridGap="var(--chakra-space-5)"
+                    gridTemplateColumns="repeat(auto-fit, minmax(100px, 1fr))"
+                    marginTop="var(--chakra-space-7)">
+                    <Flex direction="column" align="center">
+                        <Box width="50%" height="80%">
+                            <IconButton
+                                bg="grey.100"
+                                w="100%"
+                                h="100%"
+                                color="yellow.600"
+                                icon={<FaClipboardList size='50%'/>}
+                                aria-label="Pick ups"/>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">Additional information</Text>
                         </Box>
                     </Flex>
                 </Box>
