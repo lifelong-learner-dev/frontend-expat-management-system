@@ -32,7 +32,7 @@ export default function HeaderSecond() {
             <h2>
               <AccordionButton color='white'>
                 <Box as="span" flex='1' textAlign='left' h="40%" fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                  <WarningIcon color="red" mr={2} boxSize={4}/>
+                  <WarningIcon color="purple" mr={2} boxSize={4}/>
                   <Text as='b'>Announcement</Text> 
                   <Text ml={6}>(Click for the details)</Text>
                 </Box>
