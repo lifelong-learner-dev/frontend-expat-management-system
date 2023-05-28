@@ -33,8 +33,8 @@ export default function HeaderSecond() {
               <AccordionButton color='white'>
                 <Box as="span" flex='1' textAlign='left' h="40%" fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                   <WarningIcon color="purple" mr={2} boxSize={4}/>
-                  <Text as='b'>Announcement</Text> 
-                  <Text ml={6}>(Click for the details)</Text>
+                  <Text as='b'> 알림(공지) </Text> 
+                  <Text ml={6}> (자세한 내용을 위해 클릭해주세요.) </Text>
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
@@ -42,9 +42,9 @@ export default function HeaderSecond() {
             <AccordionPanel pb={1} fontSize="xm" color='white'>
               <CheckIcon color="green.400" mr={2} />  
                 <Link fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}> 
-                  Residence permit -
+                  가족 이카멧 -
                   <Text ml={6}>
-                    The required documents changed.
+                    요청 서류 변경.
                   </Text>
                 </Link>
             </AccordionPanel>
