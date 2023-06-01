@@ -14,7 +14,7 @@ const BASE_URL = "http://127.0.0.1:8000/api/v1"
 export const getMe = () =>
   instance.get(`users/me`).then((response) => response.data);
 
-  export const logOut = () =>
+export const logOut = () =>
   instance
     .post(`users/log-out`, null, {
       headers: {

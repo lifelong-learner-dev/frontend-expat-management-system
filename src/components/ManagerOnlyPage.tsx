@@ -7,10 +7,12 @@ export default function useManagerOnlyPage() {
   const navigate = useNavigate();
   useEffect(() => {
     if (!userLoading) {
-      if (!user?.is_manager) {
-        navigate("/");
+        if (user?.is_expat) {
+          navigate("/expathome");
+        } else if (user?.is_supporter) {
+          navigate("/supporterhome");
+        }
       }
-    }
   }, [userLoading, user, navigate]);
   return;
 }

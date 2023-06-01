@@ -1,8 +1,10 @@
 import { Box, Button, Flex, Grid, IconButton, Image, Text } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
 import { FaCar, FaClipboardList, FaHouseUser, FaIdCard, FaLuggageCart, FaRoad, FaRoute, FaTruckMoving, FaUser, FaUserFriends, FaUsers } from "react-icons/fa";
+import ProtectedPage from "../components/ProtectedPage";
 export default function SupporterHome(){
     return (
+        <ProtectedPage>
             <Grid
                 mt={1}
                 mb={10}
@@ -32,7 +34,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaUser size='50%'/>}
                                 aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 개인 정보 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Personal information </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -49,7 +51,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaIdCard size='50%'/>}
                                 aria-label="Work permit"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 워크퍼밋(주재원 이카멧)</Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Work permit <br/> (Expat) </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -66,7 +68,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaUsers size='50%'/>}
                                 aria-label="Family residence permit"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 가족 이카멧 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Family residence permit </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -83,7 +85,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaCar size='50%'/>}
                                 aria-label="Company car"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md'  }} textAlign="center"> 회사 차량 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md'  }} textAlign="center"> Company car </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -100,7 +102,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaRoad size='50%'/>}
                                 aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 튀르키예 운전면허증 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Driving license </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -117,7 +119,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaHouseUser size='50%'/>}
                                 aria-label="House"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 거주지 정보 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> House </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -134,7 +136,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaTruckMoving size='50%'/>}
                                 aria-label="Moving"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 이사(해외/국내) </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Moving <br/> (Overseas <br/> /Domestic) </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -151,7 +153,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaRoute size='50%'/>}
                                 aria-label="Green card"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 그린 카드 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Green card </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -168,7 +170,7 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaLuggageCart size='50%'/>}
                                 aria-label="Pick up"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 픽업 요청 (첫입국, 마지막 출국) </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center">  Pick up request <br/> (First arrival, <br/> Last departure) </Text>
                         </Box>
                     </Flex>
                 </Box>
@@ -185,10 +187,11 @@ export default function SupporterHome(){
                                 color="yellow.600"
                                 icon={<FaClipboardList size='50%'/>}
                                 aria-label="Pick ups"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 주재원 관련 추가정보 </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Additional information </Text>
                         </Box>
                     </Flex>
                 </Box>
             </Grid>   
+        </ProtectedPage>
     );
 }
