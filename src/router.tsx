@@ -10,6 +10,7 @@ import { IUser } from "./types";
 import { ReactNode } from "react";
 import ProtectedPage from "./components/ProtectedPage";
 import ExpatUser from "./routes/ExpatUser";
+import ExpatWorkpermit from "./routes/ExpatWorkpermit";
 
 const router = createBrowserRouter([{
     path: "/",
@@ -25,12 +26,16 @@ const router = createBrowserRouter([{
             element: <ExpatHome/>,
         },
         {
-            path:"supporterhome",
-            element: <SupporterHome/>,
+            path: "expathome/expatuser",
+            element: <ExpatUser/>
         },
         {
-            path: "supporterhome/expatuser",
-            element: <ExpatUser/>
+            path: "supporterhome/expatworkpermit",
+            element: <ExpatWorkpermit/>
+        },
+        {
+            path:"supporterhome",
+            element: <SupporterHome/>,
         },
         {
             path:"managerhome",

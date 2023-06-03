@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Grid, IconButton, Image, Text } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
 import { FaCar, FaClipboardList, FaHouseUser, FaIdCard, FaLuggageCart, FaRoad, FaRoute, FaTruckMoving, FaUser, FaUserFriends, FaUsers } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import ProtectedPage from "../components/ProtectedPage";
 export default function SupporterHome(){
     return (
@@ -27,14 +28,16 @@ export default function SupporterHome(){
                     marginTop="var(--chakra-space-7)">
                     <Flex direction="column" align="center">
                         <Box width="50%" height="80%">
-                            <IconButton
-                                bg="grey.100"
-                                w="100%"
-                                h="100%"
-                                color="yellow.600"
-                                icon={<FaUser size='50%'/>}
-                                aria-label="User"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Personal information </Text>
+                            <Link to={'/supporterhome/expatuser'}>
+                                <IconButton
+                                    bg="grey.100"
+                                    w="100%"
+                                    h="100%"
+                                    color="yellow.600"
+                                    icon={<FaUser size='50%'/>}
+                                    aria-label="User"/>
+                                <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> Personal information </Text>
+                            </Link>
                         </Box>
                     </Flex>
                 </Box>

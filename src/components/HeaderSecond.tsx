@@ -61,10 +61,11 @@ export default function HeaderSecond() {
                     bg={"whiteAlpha"}
                 />
                 <IconButton
+                    w={'20%'}
                     ml='2'
                     aria-label="Search"
                     icon={<FaSearch size="50%" />}
-                    colorScheme="blue"
+                    colorScheme="blackAlpha"
                     size="md"
                     onClick={handleSearch}
                 />

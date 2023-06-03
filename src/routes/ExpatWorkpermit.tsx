@@ -1,10 +1,11 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Center, Divider, HStack, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useColorModeValue, VStack } from "@chakra-ui/react";
 import { useNavigate, Link } from "react-router-dom";
 import useExpatOnlyPage from "../components/ExpatOnlyPage";
+import useSupporterOnlyPage from "../components/SupporterOnlyPage";
 import useUser from "../lib/useUser";
 
-export default function ExpatUser() {
-  useExpatOnlyPage();
+export default function ExpatWorkpermit() {
+  useSupporterOnlyPage();
   const { user, userLoading } = useUser();
   const navigate = useNavigate();
   const boxColor = useColorModeValue("gray.100", "gray.700");
@@ -25,7 +26,7 @@ export default function ExpatUser() {
                              <Link to={'/expathome'}> 메인 페이지 </Link>
                             </AccordionPanel>
                             <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                             <Link to={'/expathome'}> 워크퍼밋 <br/> (주재원 이카멧) </Link>
+                             <Link to={'/expathome'}> 개인 정보 </Link>
                             </AccordionPanel>
                             <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 가족 이카멧 </Link>

@@ -170,7 +170,7 @@ export default function ExpatHome(){
                                 color="yellow.600"
                                 icon={<FaLuggageCart size='50%'/>}
                                 aria-label="Pick up"/>
-                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 픽업 요청 (첫입국, 마지막 출국) </Text>
+                            <Text fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} textAlign="center"> 픽업 요청 </Text>
                         </Box>
                     </Flex>
                 </Box>
