@@ -3,16 +3,18 @@ import { useNavigate } from "react-router-dom";
 import useUser from "../lib/useUser";
 
 export default function useExpatOnlyPage() {
-  const { user, userLoading } = useUser();
+  const { user, isLoggedIn, userLoading } = useUser();
   const navigate = useNavigate();
   useEffect(() => {
-    if (!userLoading) {
-        if (user?.is_manager) {
-          navigate("/managerhome");
-        } else if (user?.is_supporter) {
-          navigate("/supporterhome");
-        }
+    if (!userLoading && !isLoggedIn) {
+      navigate("/");
+    }  else if (isLoggedIn) {
+      if (user?.is_manager) {
+        navigate("/managerhome");
+      } else if (user?.is_supporter) {
+        navigate("/supporterhome");
       }
-  }, [userLoading, user, navigate]);
+    }
+  }, [userLoading, isLoggedIn, user, navigate]);
   return;
 }

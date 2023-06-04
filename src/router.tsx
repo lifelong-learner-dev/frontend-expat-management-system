@@ -30,7 +30,7 @@ const router = createBrowserRouter([{
             element: <ExpatUser/>
         },
         {
-            path: "supporterhome/expatworkpermit",
+            path: "expathome/expatworkpermit",
             element: <ExpatWorkpermit/>
         },
         {

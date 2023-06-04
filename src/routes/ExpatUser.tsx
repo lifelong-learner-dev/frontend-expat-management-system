@@ -9,8 +9,9 @@ export default function ExpatUser() {
   const navigate = useNavigate();
   const boxColor = useColorModeValue("gray.100", "gray.700");
   return (
-        <HStack justifyContent="space-between" alignItems={'top'}>
-                <Box w={'25%'} ml={'2'} mt={'10'}>
+        <HStack justifyContent="space-around" alignItems={'top'} ml={{base:'5', md:'7', lg:'3'}} mr={{base:'5', md:'7', lg:'3'}}>
+            <VStack ml={{base:'2', md:'4', lg:'7'}} mt={'10'}>    
+                <Box minWidth={{base:'95px', md:'150px', lg:'200px'}}>
                     <Accordion allowToggle>
                         <AccordionItem>
                             <h2>
@@ -21,46 +22,47 @@ export default function ExpatUser() {
                                 <AccordionIcon />
                             </AccordionButton>
                             </h2>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 메인 페이지 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                             <Link to={'/expathome'}> 워크퍼밋 <br/> (주재원 이카멧) </Link>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                             <Link to={'/expathome'}> 개인 정보 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 가족 이카멧 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 회사 차량 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 운전면허증 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 거주지 정보 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                             <Link to={'/expathome'}> 이사 (해외/국내) </Link>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                             <Link to={'/expathome'}> 이사 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 그린 카드 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 픽업 요청 </Link>
                             </AccordionPanel>
-                            <AccordionPanel ml={{base:'0', md:'5', lg:'10'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                            <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
                              <Link to={'/expathome'}> 주재원 관련 추가정보 </Link>
                             </AccordionPanel>
                         </AccordionItem>
                     </Accordion>
                 </Box>
+            </VStack>
             <Center height='950px'>
                 <Divider mt={'7'} orientation='vertical' />
             </Center>
-            <Box w={'70%'}>
+            <Box minWidth={{base:'400px', md:'550px', lg:'650px'}}>
                 <TableContainer mt={"10"} mr={"10"} mb={'10'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} >
                 <Table variant='simple'>
-                    <TableCaption mb={'5'}>Imperial to metric conversion factors</TableCaption>
+                    <TableCaption mb={'5'} textAlign={'left'}>업데이트가 필요한 정보는 총무팀에 알려주세요.</TableCaption>
                     <Thead>
                     <Tr bg='cyan.100'>
                         <Th textColor='black'>Subjects</Th>
