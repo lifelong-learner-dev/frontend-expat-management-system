@@ -78,9 +78,9 @@ export default function ExpatWorkpermit() {
                                         <AccordionIcon />
                                     </AccordionButton>
                                     </h2>
-                                    <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                                        <TableContainer mt={"2"} mr={"10"} mb={'10'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} >
-                                        <Table variant='simple'>
+                                    <AccordionPanel mt={'1'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                                        <TableContainer fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} >
+                                        <Table variant='simple' size={"xs"}>
                                             <TableCaption mb={'5'} textAlign={'left'}>업데이트가 필요한 정보는 총무팀에 알려주세요.</TableCaption>
                                             <Thead>
                                             <Tr bg='cyan.100'>
@@ -137,28 +137,22 @@ export default function ExpatWorkpermit() {
                                         <AccordionIcon />
                                     </AccordionButton>
                                     </h2>
-                                    <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                                        <TableContainer mt={"2"} mr={"10"} mb={'10'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} maxWidth={{base:'300px', md:'550px', lg:'650px'}}>
-                                        <Table variant='simple'>
+                                    <AccordionPanel mt={'1'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
+                                        <TableContainer fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} maxWidth={{base:'400px', md:'550px', lg:'650px'}}>
+                                        <Table variant='simple' size={"xs"}>
                                             <TableCaption mb={'5'} textAlign={'left'}>업데이트가 필요한 정보는 총무팀에 알려주세요.</TableCaption>
                                             <Thead>
                                             <Tr bg='cyan.100'>
                                                 <Th textColor='black'>Subjects</Th>
                                                 <Th textColor='black'>Contents</Th>
-                                                <Th textColor='black'>Detailed information</Th>
+                                                <Th textColor='black'>Details</Th>
                                             </Tr>
                                             </Thead>
                                             <Tbody>
                                             <Tr>
-                                                <Td></Td>
-                                            </Tr>
-                                            <Tr bg={'cyan.100'}>
-                                                <Th textColor={'black'}>Turkish ID</Th>
-                                                <Td></Td>
-                                            </Tr>
-                                            <Tr>
                                                 <Td bg={boxColor}>Turkish ID number</Td>
                                                 <Td>{user?.turkish_id}</Td>
+                                                <Td>Turkish ID number</Td>
                                             </Tr>
                                             <Tr>
                                                 <Td bg={boxColor}>Turkish ID Expiry date</Td>
