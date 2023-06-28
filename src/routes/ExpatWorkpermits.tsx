@@ -1,16 +1,22 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Center, Divider, HStack, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, useColorModeValue, useDisclosure, VStack } from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { getWorkpermits } from "../api";
+import ExpatWorkpermit from "../components/ExpatWorkpermit";
 import useExpatOnlyPage from "../components/ExpatOnlyPage";
 import useSupporterOnlyPage from "../components/SupporterOnlyPage";
 import WorkpermitRequestModal from "../components/WorkpermitRequestmodal";
 import useUser from "../lib/useUser";
+import { IWorkpermitList } from "../types";
 
-export default function ExpatWorkpermit() {
+export default function ExpatWorkpermits() {
   useExpatOnlyPage();
   const { user, userLoading } = useUser();
   const navigate = useNavigate();
   const boxColor = useColorModeValue("gray.100", "gray.700");
   const{isOpen:isRequestOpen, onClose:onRequestClose, onOpen:onRequestOpen} = useDisclosure();
+  const { isLoading, data } = useQuery<IWorkpermitList[]>(["workpermits"], getWorkpermits);
   return (
         <HStack justifyContent="space-around" alignItems={'top'} ml={{base:'5', md:'7', lg:'3'}} mr={{base:'5', md:'7', lg:'3'}}>
             <VStack ml={{base:'2', md:'4', lg:'7'}} mt={'10'}>    
@@ -126,60 +132,15 @@ export default function ExpatWorkpermit() {
                                 </AccordionItem>
                     </Accordion>
                 </Box>
-                <Box minWidth={{base:'400px', md:'550px', lg:'650px'}}>
-                    <Accordion allowToggle mt={'3'} mr={'2'}>
-                                <AccordionItem>
-                                    <h2>
-                                    <AccordionButton _expanded={{ bg: 'cyan.100', color: 'black' }}>
-                                        <Box as="b" flex='1' textAlign='center' fontSize={{ base: 'sm', md: 'xm', lg: 'md' }}>
-                                        워크퍼밋, 여권 세부 정보
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                    </h2>
-                                    <AccordionPanel mt={'1'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                                        <TableContainer fontSize={{ base: 'xs', md: 'xm', lg: 'md' }} maxWidth={{base:'400px', md:'550px', lg:'650px'}}>
-                                        <Table variant='simple' size={"xs"}>
-                                            <TableCaption mb={'5'} textAlign={'left'}>업데이트가 필요한 정보는 총무팀에 알려주세요.</TableCaption>
-                                            <Thead>
-                                            <Tr bg='cyan.100'>
-                                                <Th textColor='black'>Subjects</Th>
-                                                <Th textColor='black'>Contents</Th>
-                                                <Th textColor='black'>Details</Th>
-                                            </Tr>
-                                            </Thead>
-                                            <Tbody>
-                                            <Tr>
-                                                <Td bg={boxColor}>Turkish ID number</Td>
-                                                <Td>{user?.turkish_id}</Td>
-                                                <Td>Turkish ID number</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td bg={boxColor}>Turkish ID Expiry date</Td>
-                                                <Td>{user?.tc_id_expiry_date}</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td></Td>
-                                            </Tr>
-                                            <Tr bg={'cyan.100'}>
-                                                <Th textColor={'black'}>Passport</Th>
-                                                <Td></Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td bg={boxColor}>Passport number</Td>
-                                                <Td>{user?.passport_number}</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td bg={boxColor}>Passport Expiry date</Td>
-                                                <Td textTransform='capitalize'>{user?.passport_expiry_date}</Td>
-                                            </Tr>
-                                            </Tbody>
-                                        </Table>
-                                        </TableContainer>
-                                    </AccordionPanel>
-                                </AccordionItem>
-                    </Accordion>
-                </Box>
+                {data?.map((workpermit) => (
+                    <ExpatWorkpermit
+                    pk={workpermit.pk}
+                    expat={workpermit.expat.username}
+                    name={workpermit.name}
+                    krstatus={workpermit.krstatus}
+                    krstatus_display={workpermit.krstatus_display}
+                  />              
+                ))}
             </VStack>
         </HStack>
     );

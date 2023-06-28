@@ -9,7 +9,8 @@ export default function useSupporterOnlyPage() {
     if (!userLoading && !isLoggedIn) {
       navigate("/");
     }  else if (isLoggedIn) {
-      if (user?.is_expat) {
+      if (user?.is_supporter){
+      } else if (user?.is_expat) {
         navigate("/expathome");
       } else if (user?.is_manager) {
         navigate("/managerhome");

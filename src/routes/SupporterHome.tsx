@@ -3,9 +3,10 @@ import { useQuery } from "@tanstack/react-query";
 import { FaCar, FaClipboardList, FaHouseUser, FaIdCard, FaLuggageCart, FaRoad, FaRoute, FaTruckMoving, FaUser, FaUserFriends, FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ProtectedPage from "../components/ProtectedPage";
+import useSupporterOnlyPage from "../components/SupporterOnlyPage";
 export default function SupporterHome(){
+    useSupporterOnlyPage();
     return (
-        <ProtectedPage>
             <Grid
                 mt={1}
                 mb={10}
@@ -195,6 +196,5 @@ export default function SupporterHome(){
                     </Flex>
                 </Box>
             </Grid>   
-        </ProtectedPage>
     );
 }

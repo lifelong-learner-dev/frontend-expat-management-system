@@ -1,10 +1,11 @@
 import { Box, Button, Flex, Grid, IconButton, Image, Text } from "@chakra-ui/react";
 import { useQuery } from "@tanstack/react-query";
 import { FaCar, FaClipboardList, FaHouseUser, FaIdCard, FaLuggageCart, FaRoad, FaRoute, FaTruckMoving, FaUser, FaUserFriends, FaUsers } from "react-icons/fa";
+import useManagerOnlyPage from "../components/ManagerOnlyPage";
 import ProtectedPage from "../components/ProtectedPage";
 export default function ManagerHome(){
+    useManagerOnlyPage();
     return (
-        <ProtectedPage>
             <Grid
                 mt={1}
                 mb={10}
@@ -192,6 +193,5 @@ export default function ManagerHome(){
                     </Flex>
                 </Box>
             </Grid>   
-        </ProtectedPage> 
     );
 }

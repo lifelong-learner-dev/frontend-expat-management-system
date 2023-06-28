@@ -1,6 +1,6 @@
 import { FaCamera, FaRegHeart, FaStar } from "react-icons/fa";
 import {
-    Accordion,
+  Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
@@ -21,27 +21,20 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 
-interface IRoomProps {
-  imageUrl: string;
-  name: string;
-  rating: number;
-  city: string;
-  country: string;
-  price: number;
-  pk: number;
-  isOwner: boolean;
+interface IWorkpermitProps {
+    pk:number;
+    name: string;
+    expat: string;
+    krstatus: string;
+    krstatus_display: string;
 }
 
 export default function ExpatWorkpermit({
-  pk,
-  imageUrl,
   name,
-  rating,
-  city,
-  country,
-  price,
-  isOwner,
-}: IRoomProps) {
+  expat,
+  krstatus,
+  krstatus_display,
+}: IWorkpermitProps) {
   const boxColor = useColorModeValue("gray.100", "gray.700");
   const navigate = useNavigate();
   return (
@@ -69,28 +62,9 @@ export default function ExpatWorkpermit({
                             </Thead>
                             <Tbody>
                             <Tr>
-                                <Td bg={boxColor}>Turkish ID number</Td>
-                                <Td>{user?.turkish_id}</Td>
-                                <Td>Turkish ID number</Td>
-                            </Tr>
-                            <Tr>
-                                <Td bg={boxColor}>Turkish ID Expiry date</Td>
-                                <Td>{user?.tc_id_expiry_date}</Td>
-                            </Tr>
-                            <Tr>
-                                <Td></Td>
-                            </Tr>
-                            <Tr bg={'cyan.100'}>
-                                <Th textColor={'black'}>Passport</Th>
-                                <Td></Td>
-                            </Tr>
-                            <Tr>
-                                <Td bg={boxColor}>Passport number</Td>
-                                <Td>{user?.passport_number}</Td>
-                            </Tr>
-                            <Tr>
-                                <Td bg={boxColor}>Passport Expiry date</Td>
-                                <Td textTransform='capitalize'>{user?.passport_expiry_date}</Td>
+                                <Td>{name}</Td>
+                                <Td>{expat}</Td>
+                                <Td>{krstatus_display}</Td>
                             </Tr>
                             </Tbody>
                         </Table>

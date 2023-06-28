@@ -10,6 +10,8 @@ const instance = axios.create({
 
 const BASE_URL = "http://127.0.0.1:8000/api/v1"
 
+export const getWorkpermits = () =>
+  instance.get("work_permits/").then((response) => response.data);
 
 export const getMe = () =>
   instance.get(`users/me`).then((response) => response.data);

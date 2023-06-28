@@ -33,3 +33,18 @@ export interface IUser {
     position: string;
     hq_position: string;
 }
+
+export interface IExpat {
+    username: string;
+    first_name: string;
+    last_name: string;
+}
+
+export interface IWorkpermitList {
+    pk: number;
+    name: string;
+    expat: IExpat;
+    krstatus: string;
+    krstatus_display: string;
+    enstatus: string;
+}
