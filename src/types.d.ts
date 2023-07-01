@@ -48,3 +48,44 @@ export interface IWorkpermitList {
     krstatus_display: string;
     enstatus: string;
 }
+
+export interface IResponsibleperson {
+    username: string;
+    first_name: string;
+    last_name: string;
+}
+
+export interface IWorkpermitProcessList {
+    title: string;
+    subtitle: string;
+    contents: string;
+    detailed_information: string;
+    subtitle2: string;
+    contents2: string;
+    detailed_information2: string;
+    subtitle3: string;
+    contents3: string;
+    detailed_information3: string;
+    subtitle4: string;
+    contents4: string;
+    detailed_information4: string;
+    subtitle5: string;
+    contents5: string;
+    detailed_information5: string;
+    subtitle6: string;
+    contents6: string;
+    detailed_information6: string;
+    subtitle7: string;
+    contents7: string;
+    detailed_information7: string;
+    subtitle8: string;
+    contents8: string;
+    detailed_information8: string;
+    subtitle9: string;
+    contents9: string;
+    detailed_information9: string;
+    subtitle10: string;
+    contents10: string;
+    detailed_information10: string;
+    responsible_person: IResponsibleperson;
+}

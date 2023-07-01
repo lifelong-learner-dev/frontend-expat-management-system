@@ -2,13 +2,14 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { getWorkpermits } from "../api";
+import { getWorkpermits, getWorkpermitsProcesses } from "../api";
 import ExpatWorkpermit from "../components/ExpatWorkpermit";
 import useExpatOnlyPage from "../components/ExpatOnlyPage";
 import useSupporterOnlyPage from "../components/SupporterOnlyPage";
 import WorkpermitRequestModal from "../components/WorkpermitRequestmodal";
 import useUser from "../lib/useUser";
-import { IWorkpermitList } from "../types";
+import { IWorkpermitList, IWorkpermitProcessList } from "../types";
+import ExpatWorkpermitProcess from "../components/ExpatWorkpermitProcess";
 
 export default function ExpatWorkpermits() {
   useExpatOnlyPage();
@@ -17,6 +18,7 @@ export default function ExpatWorkpermits() {
   const boxColor = useColorModeValue("gray.100", "gray.700");
   const{isOpen:isRequestOpen, onClose:onRequestClose, onOpen:onRequestOpen} = useDisclosure();
   const { isLoading, data } = useQuery<IWorkpermitList[]>(["workpermits"], getWorkpermits);
+  const {isLoading: isLoadingProcesses, data: processesData} = useQuery<IWorkpermitProcessList[]>(["workpermitsprocesses"], getWorkpermitsProcesses);
   return (
         <HStack justifyContent="space-around" alignItems={'top'} ml={{base:'5', md:'7', lg:'3'}} mr={{base:'5', md:'7', lg:'3'}}>
             <VStack ml={{base:'2', md:'4', lg:'7'}} mt={'10'}>    
@@ -139,6 +141,43 @@ export default function ExpatWorkpermits() {
                     name={workpermit.name}
                     krstatus={workpermit.krstatus}
                     krstatus_display={workpermit.krstatus_display}
+                  />              
+                ))}
+
+                {processesData?.map((workpermitprocess) => (
+                    <ExpatWorkpermitProcess
+                    title={workpermitprocess.title}
+                    subtitle={workpermitprocess.subtitle}
+                    contents={workpermitprocess.contents}
+                    detailed_information={workpermitprocess.detailed_information}
+                    subtitle2={workpermitprocess.subtitle2}
+                    contents2={workpermitprocess.contents2}
+                    detailed_information2={workpermitprocess.detailed_information2}
+                    subtitle3={workpermitprocess.subtitle3}
+                    contents3={workpermitprocess.contents3}
+                    detailed_information3={workpermitprocess.detailed_information3}
+                    subtitle4={workpermitprocess.subtitle4}
+                    contents4={workpermitprocess.contents4}
+                    detailed_information4={workpermitprocess.detailed_information4}
+                    subtitle5={workpermitprocess.subtitle5}
+                    contents5={workpermitprocess.contents5}
+                    detailed_information5={workpermitprocess.detailed_information5}
+                    subtitle6={workpermitprocess.subtitle6}
+                    contents6={workpermitprocess.contents6}
+                    detailed_information6={workpermitprocess.detailed_information6}
+                    subtitle7={workpermitprocess.subtitle7}
+                    contents7={workpermitprocess.contents7}
+                    detailed_information7={workpermitprocess.detailed_information7}
+                    subtitle8={workpermitprocess.subtitle8}
+                    contents8={workpermitprocess.contents8}
+                    detailed_information8={workpermitprocess.detailed_information8}
+                    subtitle9={workpermitprocess.subtitle9}
+                    contents9={workpermitprocess.contents9}
+                    detailed_information9={workpermitprocess.detailed_information9}
+                    subtitle10={workpermitprocess.subtitle10}
+                    contents10={workpermitprocess.contents10}
+                    detailed_information10={workpermitprocess.detailed_information10}
+                    responsible_person={workpermitprocess.responsible_person.username}
                   />              
                 ))}
             </VStack>
