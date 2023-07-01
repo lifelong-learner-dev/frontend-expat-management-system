@@ -50,7 +50,7 @@ export default function ExpatUser() {
                              <Link to={'/expathome'}> 픽업 요청 </Link>
                             </AccordionPanel>
                             <AccordionPanel ml={{base:'0', md:'5', lg:'7'}} mt={'1.5'} textAlign={'left'} fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}>
-                             <Link to={'/expathome'}> 주재원 관련 추가정보 </Link>
+                             <Link to={'/expathome'}> 추가 정보 </Link>
                             </AccordionPanel>
                         </AccordionItem>
                     </Accordion>

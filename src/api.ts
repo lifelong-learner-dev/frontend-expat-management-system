@@ -16,6 +16,9 @@ export const getWorkpermits = () =>
 export const getWorkpermitsProcesses = () =>
   instance.get("work_permits_processes/").then((response) => response.data);
 
+export const getAnnouncements = () =>
+  instance.get("announcements/").then((response) => response.data);
+
 export const getMe = () =>
   instance.get(`users/me`).then((response) => response.data);
 

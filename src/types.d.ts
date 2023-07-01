@@ -89,3 +89,8 @@ export interface IWorkpermitProcessList {
     detailed_information10: string;
     responsible_person: IResponsibleperson;
 }
+
+export interface IHeaderSecondAnnouncement {
+    title: string;
+    subtitle: string;
+}

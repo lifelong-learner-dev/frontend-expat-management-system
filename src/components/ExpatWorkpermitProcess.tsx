@@ -9,6 +9,7 @@ import {
   HStack,
   Table,
   TableCaption,
+  TableCellProps,
   TableContainer,
   Tbody,
   Td,
@@ -92,6 +93,15 @@ export default function ExpatWorkpermitProcess({
 }: IWorkpermitProcessProps) {
   const boxColor = useColorModeValue("gray.100", "gray.700");
   const navigate = useNavigate();
+  const tableStyle: TableCellProps ={
+    textAlign: "left",
+    fontSize: "xs",
+    whiteSpace: "normal",
+    wordBreak: "break-word",
+    borderWidth: "1px",
+    borderColor: "cyan.300",
+    p: 2,
+  };
   return (
     <Box minWidth={{base:'400px', md:'550px', lg:'650px'}}>
         <Accordion allowToggle mt={'3'} mr={'2'}>
@@ -109,80 +119,80 @@ export default function ExpatWorkpermitProcess({
                         <Table variant='simple' size={"xs"}>
                             <Thead>
                             <Tr bg='cyan.100'>
-                                <Th textColor='black' textAlign={'center'}> 주제 </Th>
-                                <Th textColor='black' textAlign={'center'}> 내용 </Th>
-                                <Th textColor='black' textAlign={'center'}> 기타 </Th>
+                                <Th textColor='black' textAlign={'center'} border={'1px solid'} borderColor={'cyan.300'}> 주제 </Th>
+                                <Th textColor='black' textAlign={'center'} border={'1px solid'} borderColor={'cyan.300'}> 내용 </Th>
+                                <Th textColor='black' textAlign={'center'} border={'1px solid'} borderColor={'cyan.300'}> 기타 </Th>
                             </Tr>
                             </Thead>
                             <Tbody>
                                 {subtitle && (    
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information}</Td>
+                                        <Td {...tableStyle}>{subtitle}</Td>
+                                        <Td {...tableStyle}>{contents}</Td>
+                                        <Td {...tableStyle}>{detailed_information}</Td>
                                     </Tr>
                                 )}
                                 {subtitle2 && ( 
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle2}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents2}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information2}</Td>
+                                        <Td {...tableStyle}>{subtitle2}</Td>
+                                        <Td {...tableStyle}>{contents2}</Td>
+                                        <Td {...tableStyle}>{detailed_information2}</Td>
                                     </Tr>
                                 )} 
                                 {subtitle3 && (   
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle3}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents3}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information3}</Td>
+                                        <Td {...tableStyle}>{subtitle3}</Td>
+                                        <Td {...tableStyle}>{contents3}</Td>
+                                        <Td {...tableStyle}>{detailed_information3}</Td>
                                     </Tr>
                                 )}   
                                 {subtitle4 && ( 
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle4}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents4}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information4}</Td>
+                                        <Td {...tableStyle}>{subtitle4}</Td>
+                                        <Td {...tableStyle}>{contents4}</Td>
+                                        <Td {...tableStyle}>{detailed_information4}</Td>
                                     </Tr>
                                 )}
                                 {subtitle5 && (
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle5}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents5}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information5}</Td>
+                                        <Td {...tableStyle}>{subtitle5}</Td>
+                                        <Td {...tableStyle}>{contents5}</Td>
+                                        <Td {...tableStyle}>{detailed_information5}</Td>
                                     </Tr>
                                 )}
                                 {subtitle6 && (
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle6}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents6}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information6}</Td>
+                                        <Td {...tableStyle}>{subtitle6}</Td>
+                                        <Td {...tableStyle}>{contents6}</Td>
+                                        <Td {...tableStyle}>{detailed_information6}</Td>
                                     </Tr>
                                 )}
                                 {subtitle7 && (
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle7}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents7}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information7}</Td>
+                                        <Td {...tableStyle}>{subtitle7}</Td>
+                                        <Td {...tableStyle}>{contents7}</Td>
+                                        <Td {...tableStyle}>{detailed_information7}</Td>
                                     </Tr>
                                 )}
                                 {subtitle8 && (
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle8}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents8}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information8}</Td>
+                                        <Td {...tableStyle}>{subtitle8}</Td>
+                                        <Td {...tableStyle}>{contents8}</Td>
+                                        <Td {...tableStyle}>{detailed_information8}</Td>
                                     </Tr>
                                 )}
                                 {subtitle9 && (
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle9}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents9}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information9}</Td>
+                                        <Td {...tableStyle}>{subtitle9}</Td>
+                                        <Td {...tableStyle}>{contents9}</Td>
+                                        <Td {...tableStyle}>{detailed_information9}</Td>
                                     </Tr>
                                 )}
                                 {subtitle10 && (
                                     <Tr>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{subtitle10}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{contents10}</Td>
-                                        <Td textAlign={'center'} fontSize={{ base: "xs", md: "sm", lg: "md" }}>{detailed_information10}</Td>
+                                        <Td {...tableStyle}>{subtitle10}</Td>
+                                        <Td {...tableStyle}>{contents10}</Td>
+                                        <Td {...tableStyle}>{detailed_information10}</Td>
                                     </Tr>
                                 )}
                             </Tbody>

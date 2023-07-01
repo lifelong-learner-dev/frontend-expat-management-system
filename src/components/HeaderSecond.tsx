@@ -1,8 +1,11 @@
 import { CheckIcon, WarningIcon, WarningTwoIcon } from '@chakra-ui/icons';
 import { Input, IconButton, HStack, Box, Center, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
 import { ChangeEvent, KeyboardEvent, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-
+import { getAnnouncements } from '../api';
+import { IHeaderSecondAnnouncement } from '../types';
+import HeaderSecondAnnouncement from './HeaderSecondAnnouncement';
 
 export default function HeaderSecond() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +26,7 @@ export default function HeaderSecond() {
   };
   const boxColor = useColorModeValue("gray.800", "yellow.600");
   const accordionColor = useColorModeValue("yellow.600", "gray.800");
-
+  const { isLoading, data } = useQuery<IHeaderSecondAnnouncement[]>(["announcement"], getAnnouncements);
   return (
     <Box bg={boxColor} >
       <HStack justifyContent="space-between">
@@ -39,15 +42,12 @@ export default function HeaderSecond() {
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel pb={1} fontSize="xm" color='white'>
-              <CheckIcon color="green.400" mr={2} />  
-                <Link fontSize={{ base: 'xs', md: 'xm', lg: 'md' }}> 
-                  가족 이카멧 -
-                  <Text ml={6}>
-                    요청 서류 변경.
-                  </Text>
-                </Link>
-            </AccordionPanel>
+            {data?.map((announcement) => (
+                  <HeaderSecondAnnouncement
+                    title={announcement.title}
+                    subtitle={announcement.subtitle}
+                  />              
+            ))}
           </AccordionItem>
         </Accordion>
         <HStack justifyContent="right" py={3} px={10} w="40%">    
