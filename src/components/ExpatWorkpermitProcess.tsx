@@ -21,20 +21,75 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 
-interface IWorkpermitProps {
-    pk:number;
-    name: string;
-    expat: string;
-    krstatus: string;
-    krstatus_display: string;
+interface IWorkpermitProcessProps {
+    title: string;
+    subtitle: string;
+    contents: string;
+    detailed_information: string;
+    subtitle2: string;
+    contents2: string;
+    detailed_information2: string;
+    subtitle3: string;
+    contents3: string;
+    detailed_information3: string;
+    subtitle4: string;
+    contents4: string;
+    detailed_information4: string;
+    subtitle5: string;
+    contents5: string;
+    detailed_information5: string;
+    subtitle6: string;
+    contents6: string;
+    detailed_information6: string;
+    subtitle7: string;
+    contents7: string;
+    detailed_information7: string;
+    subtitle8: string;
+    contents8: string;
+    detailed_information8: string;
+    subtitle9: string;
+    contents9: string;
+    detailed_information9: string;
+    subtitle10: string;
+    contents10: string;
+    detailed_information10: string;
+    responsible_person: string;
 }
 
-export default function ExpatWorkpermit({
-  name,
-  expat,
-  krstatus,
-  krstatus_display,
-}: IWorkpermitProps) {
+export default function ExpatWorkpermitProcess({
+  title,
+  subtitle,
+  contents,
+  detailed_information,
+  subtitle2,
+  contents2,
+  detailed_information2,
+  subtitle3,
+  contents3,
+  detailed_information3,
+  subtitle4,
+  contents4,
+  detailed_information4,
+  subtitle5,
+  contents5,
+  detailed_information5,
+  subtitle6,
+  contents6,
+  detailed_information6,
+  subtitle7,
+  contents7,
+  detailed_information7,
+  subtitle8,
+  contents8,
+  detailed_information8,
+  subtitle9,
+  contents9,
+  detailed_information9,
+  subtitle10,
+  contents10,
+  detailed_information10,
+  responsible_person,
+}: IWorkpermitProcessProps) {
   const boxColor = useColorModeValue("gray.100", "gray.700");
   const navigate = useNavigate();
   return (
