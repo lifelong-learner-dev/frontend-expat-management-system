@@ -19,7 +19,7 @@ export default function Header(){
         onMutate: () => {
           toastId.current = toast({
             title: "Login out...",
-            description: "Sad to see you go...",
+            description: "See you again",
             status: "loading",
             duration: 10000,
             position: "bottom-right",
@@ -51,21 +51,21 @@ export default function Header(){
                     aria-label="Toggle dark mode" 
                     icon={<Icon/>}/>
                 {!userLoading ? (
-          !isLoggedIn ? (
-            <>
-              <Button colorScheme={"blue"} onClick={onLoginOpen}>Log in</Button>
-            </>
-          ) : (
-            <Menu>
-              <MenuButton>
-                <Avatar name={user?.username} size={"md"} />
-              </MenuButton>
-              <MenuList>
-                <MenuItem onClick={onLogOut}>Log out</MenuItem>
-              </MenuList>
-            </Menu>
-          )
-        ) : null}
+                  !isLoggedIn ? (
+                    <>
+                      <Button colorScheme={"blue"} onClick={onLoginOpen}>Log in</Button>
+                    </>
+                  ) : (
+                    <Menu>
+                      <MenuButton>
+                        <Avatar name={user?.username} size={"md"} />
+                      </MenuButton>
+                      <MenuList>
+                        <MenuItem onClick={onLogOut}>Log out</MenuItem>
+                      </MenuList>
+                    </Menu>
+                  )
+                ) : null}
             </HStack>
             <LoginModal isOpen={isLoginOpen} onClose={onLoginClose} />
         </HStack>
