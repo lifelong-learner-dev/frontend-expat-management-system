@@ -2,14 +2,15 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { getWorkpermits, getWorkpermitsProcesses } from "../api";
+import { getWorkpermits, getWorkpermitsProcesses, getWorkpermitsRequests } from "../api";
 import ExpatWorkpermit from "../components/ExpatWorkpermit";
 import useExpatOnlyPage from "../components/ExpatOnlyPage";
 import useSupporterOnlyPage from "../components/SupporterOnlyPage";
 import WorkpermitRequestModal from "../components/WorkpermitRequestmodal";
 import useUser from "../lib/useUser";
-import { IWorkpermitList, IWorkpermitProcessList } from "../types";
+import { IWorkpermitList, IWorkpermitProcessList, IWorkpermitRequestList } from "../types";
 import ExpatWorkpermitProcess from "../components/ExpatWorkpermitProcess";
+import ExpatWorkpermitRequest from "../components/ExpatWorkpermitRequest";
 
 export default function ExpatWorkpermits() {
   useExpatOnlyPage();
@@ -19,6 +20,7 @@ export default function ExpatWorkpermits() {
   const{isOpen:isRequestOpen, onClose:onRequestClose, onOpen:onRequestOpen} = useDisclosure();
   const { isLoading, data } = useQuery<IWorkpermitList[]>(["workpermits"], getWorkpermits);
   const {isLoading: isLoadingProcesses, data: processesData} = useQuery<IWorkpermitProcessList[]>(["workpermitsprocesses"], getWorkpermitsProcesses);
+  const {isLoading: isLoadingRequests, data: requestsData } = useQuery<IWorkpermitRequestList[]>(["workpermitsrequests"], getWorkpermitsRequests);
   return (
         <HStack justifyContent="space-around" alignItems={'top'} ml={{base:'5', md:'7', lg:'3'}} mr={{base:'5', md:'7', lg:'3'}}>
             <VStack ml={{base:'2', md:'4', lg:'7'}} mt={'10'}>    
@@ -141,6 +143,20 @@ export default function ExpatWorkpermits() {
                     name={workpermit.name}
                     krstatus={workpermit.krstatus}
                     krstatus_display={workpermit.krstatus_display}
+                  />              
+                ))}
+
+                {requestsData?.map((workpermitsrequest) => (
+                    <ExpatWorkpermitRequest
+                    pk={workpermitsrequest.pk}
+                    expat={workpermitsrequest.expat.username}
+                    location={workpermitsrequest.location}
+                    date={workpermitsrequest.date}
+                    name={workpermitsrequest.name}
+                    krstatus={workpermitsrequest.krstatus}
+                    krstatus_display={workpermitsrequest.krstatus_display}
+                    created_at={workpermitsrequest.created_at}
+                    updated_at={workpermitsrequest.updated_at}
                   />              
                 ))}
 

@@ -49,6 +49,18 @@ export interface IWorkpermitList {
     enstatus: string;
 }
 
+export interface IWorkpermitRequestList {
+    pk:number;
+    name: string;
+    expat: IExpat;
+    location: string;
+    date: Date;
+    krstatus: string;
+    krstatus_display: string;
+    created_at: Date;
+    updated_at: Date;
+}
+
 export interface IResponsibleperson {
     username: string;
     first_name: string;

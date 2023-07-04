@@ -13,6 +13,9 @@ const BASE_URL = "http://127.0.0.1:8000/api/v1"
 export const getWorkpermits = () =>
   instance.get("work_permits/").then((response) => response.data);
 
+export const getWorkpermitsRequests = () =>
+  instance.get("work_permits_requests/").then((response) => response.data);
+
 export const getWorkpermitsProcesses = () =>
   instance.get("work_permits_processes/").then((response) => response.data);
 
