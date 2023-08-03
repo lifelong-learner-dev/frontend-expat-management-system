@@ -12,7 +12,14 @@ export default function HeaderSecond() {
 
   const handleSearch = (): void => {
     // Perform search logic here with the searchTerm
+    if (!data) return; // Return if data is not available
+    const filteredData = data.filter((announcement) =>
+      announcement.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     console.log('Searching for:', searchTerm);
+    console.log('Filtered Data:', filteredData);
+    // Now you can use the filteredData to display the results.
+    // For now, we'll just log the filtered data.
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -27,6 +34,9 @@ export default function HeaderSecond() {
   const boxColor = useColorModeValue("gray.800", "yellow.600");
   const accordionColor = useColorModeValue("yellow.600", "gray.800");
   const { isLoading, data } = useQuery<IHeaderSecondAnnouncement[]>(["announcement"], getAnnouncements);
+  const filteredData = data?.filter((announcement) =>
+    announcement.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <Box bg={boxColor} >
       <HStack justifyContent="space-between">
@@ -42,7 +52,7 @@ export default function HeaderSecond() {
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            {data?.map((announcement) => (
+            {filteredData?.map((announcement) => (
                   <HeaderSecondAnnouncement
                     title={announcement.title}
                     subtitle={announcement.subtitle}

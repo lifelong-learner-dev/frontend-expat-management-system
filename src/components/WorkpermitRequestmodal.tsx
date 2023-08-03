@@ -1,11 +1,17 @@
-import { Box, Button, Input, InputGroup, InputLeftElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, VStack } from "@chakra-ui/react";
+import { Box, Button, Input, InputGroup, InputLeftElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure, VStack } from "@chakra-ui/react";
 import { FaLock, FaRegCalendarAlt, FaRegMap, FaUserAstronaut } from "react-icons/fa";
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+import CalendarPopUpModal from "../components/CalendarPopUpModal";
 
 interface WorkpermitRequestModalProps {
     isOpen: boolean;
     onClose:() => void;
 }
+
 export default function WorkpermitRequestModal({onClose, isOpen}:WorkpermitRequestModalProps){
+    const{isOpen:isRequestOpen, onClose:onRequestClose, onOpen:onRequestOpen} = useDisclosure();
+
     return (
         <Modal motionPreset="slideInBottom" onClose={onClose} isOpen={isOpen}>
         <ModalOverlay/>
@@ -21,7 +27,8 @@ export default function WorkpermitRequestModal({onClose, isOpen}:WorkpermitReque
                     </InputGroup> 
                     <InputGroup>
                     <InputLeftElement children={
-                        <Box color="blue.400"><FaRegCalendarAlt/></Box>} />
+                        <Button color="blue.400" onClick={onRequestOpen} size={'md'}><FaRegCalendarAlt/></Button>} />
+                             <CalendarPopUpModal isOpen={isRequestOpen} onClose={onRequestClose} />
                         <Input variant={"filled"} placeholder="분실 날짜"/>
                     </InputGroup>
                 </VStack>

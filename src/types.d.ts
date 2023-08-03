@@ -106,3 +106,5 @@ export interface IHeaderSecondAnnouncement {
     title: string;
     subtitle: string;
 }
+
+export type OnChangeDateCallback<TValue> = (date: TValue) => void;
